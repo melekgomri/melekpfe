@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+{% block title %}Mon-panier -WEST WORLD SHIRTS {% endblock %}
+{% block content %}
+<h1>Mon panier</h1>
+Retrouvez l'ensemble des produits que vous avez ajouter a votre panier.
+<hr>
+<table class="table mt-3">
+<thead>
+<tr>
+<th scope="col">Produit </th>
+<th scope="col"> </th>
+<th scope="col">Quantity </th>
+<th scope="col">Prix </th>
+<th scope="col">Total </th>
+<th scope="col"> </th>
+</tr>
+</thead>
+<tbody>
+{% set total=null %}
+{% for product in items %}
+<tr>
+<th><img src="/uploads/{{product.product.illustration}}" alt="{{product.product.name}}" height="75px"><br/>
+</th>
+<td>
+{{product.product.name}}<br/>
+<small>{{product.product.subtitle}}</small>
+</td>
+<td>{{product.quantity}}</td>
+<td>{{(product.product.price /100)|number_format(2,',','.')}}</td>
+<td>{{(product.product.price * product.quantity)|number_format(2,',','.')}}</td>
+<td>
+<a href="{{path('remove_my_cart',{'id':product.product.id})}}"><img src="{{asset('assets/img/delete.png')}}" alt=" supprimer mon produit" height="30px"></a></td>
+</tr>
+{% set total=total+(product.product.price * product.quantity) %}
+{% endfor %}
+</tbody>
+</table>
+<div class="text-right">
+<b>Nombre de produit :</b>{{items|length}}</br>
+<b>Total de mon panier :</b> {{((total)/100)|number_format(2,',','.')}}$
+<a href="" class="btn btn-success btn-block mt-3">Valider Mon Panier </a>
+</div>
+{% endblock %}
