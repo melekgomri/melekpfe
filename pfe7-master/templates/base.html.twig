@@ -17,22 +17,35 @@
                 <h2 class="logo">WEST WORLD SHIRTS</h2>
             </div>
 
-            <div class="menu">
-                <ul>
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">DESIGN</a></li>
-                     <li> <a href="{{path('products')}}"> Produits</a></li>
-                    <li><a href="#">CONTACT</a></li>
-                </ul>
-            </div>
-
-            <div class="search">
-                <input class="srch" type="search" name="" placeholder="Type To text">
-                <a href="#"> <button class="btn">Search</button></a>
-            </div>
-
-        </div> 
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{path('products')}}">Nos produits</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Qis somme nous ?</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{path('messages')}}">messenger</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{path('app_calendar_index')}}">Calendrier</a>
+                </li>
+            </ul>
+            <div class="navbar-item-custom">
+            {% if app.user %}
+             <a href="{{path('account')}}">Mon compte <small>({{app.user.firstname}})</small></a>  |<a href="{{path('app_logout')}}">Deconnexion</a>
+            {% else %}
+                <a href="{{path('app_login')}}">connexion</a>  |<a href="{{path('register')}}">Inscription</a>
+                {% endif %}
+                <a href="{{path('cart')}}"><img src="{{asset('assets/img/shopping-cart.png')}}"height="20px"></a>
+                </div>
+            </form>
+        </div>
+        <br><br><br><br>
         <div class="content">
             <h1>Web Design & <br><span>Development</span> <br>Course</h1>
             <p class="par">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt neque 
@@ -48,7 +61,7 @@
                     <button class="btnn"><a href="#">Login</a></button>
 
                     <p class="link">Don't have an account<br>
-                    <a href="#">Sign up </a> here</a></p>
+                    <a <a href="{{path('register')}}">Sign up </a> here</a></p>
                     <p class="liw">Log in with</p>
 
                     <div class="icons">
