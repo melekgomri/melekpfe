@@ -3,27 +3,34 @@
 <head>
     <title>Webpage Design</title>
     <link rel="stylesheet" href="{{asset('assets/css/style2.css')}}">
-    <style >
-    .main{
- background-image: url('assets/img/1.jpg') !important; 
-    } 
-</style>
 </head>
 <body>
 
     <div class="main">
         <div class="navbar">
             <div class="icon">
-                <h2 class="logo">WEST WORLD SHIRTS</h2>
+                <h2 class="logo">PraRoz</h2>
             </div>
 
             <div class="menu">
                 <ul>
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">DESIGN</a></li>
-                     <li> <a href="{{path('products')}}"> Produits</a></li>
-                    <li><a href="#">CONTACT</a></li>
+                     <li>
+                    <a href="{{path('products')}}">Nos produits</a>
+                </li>
+                <li >
+                    <a href="#">Qis somme nous ?</a>
+                </li>
+                <li >
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+            <div class="navbar-item-custom">
+            {% if app.user %}
+             <a href="{{path('account')}}">Mon compte <small>({{app.user.firstname}})</small></a>  |<a href="{{path('app_logout')}}">Deconnexion</a>
+            {% else %}
+                <a href="{{path('app_login')}}">connexion</a>  |<a href="{{path('register')}}">Inscription</a>
+                {% endif %}
+                <a href="{{path('cart')}}"><img src="{{asset('assets/img/shopping-cart.png')}}"height="20px"></a>
                 </ul>
             </div>
 
