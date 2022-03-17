@@ -42,11 +42,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'recipient', targetEntity: Messages::class, orphanRemoval: true)]
     private $received;
 
+   
+   
+
+   
     public function __construct()
     {
         $this->addresses = new ArrayCollection();
         $this->sent = new ArrayCollection();
         $this->received = new ArrayCollection();
+        $this->categories = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -232,4 +237,5 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
 }
