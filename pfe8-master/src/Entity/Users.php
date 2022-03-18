@@ -22,7 +22,7 @@ class Users
     private $created_at;
 
     #[ORM\Column(type: 'boolean')]
-    private $is_rgpd =false;
+    private $is_rgpd;
 
     #[ORM\Column(type: 'string', length: 255)]
     private $validation_token;

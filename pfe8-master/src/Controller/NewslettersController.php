@@ -2,8 +2,9 @@
 
 namespace App\Controller;
 
-use App\Entity\Newsletters;
+use App\Entity\Newsletters\Newsletters;
 use App\Entity\Users;
+use Doctrine\ORM\EntityManagerInterface;
 use App\Form\NewslettersType;
 use App\Form\NewslettersUsersType;
 use App\Message\SendNewsletterMessage;
@@ -25,7 +26,7 @@ class NewslettersController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index(Request $request, MailerInterface $mailer): Response
+    public function index(Request $request, MailerInterface $mailer,EntityManagerInterface $em): Response
     {
         $user = new Users();
         $form = $this->createForm(NewslettersUsersType::class, $user);
@@ -37,7 +38,7 @@ class NewslettersController extends AbstractController
 
             $user->setValidationToken($token);
 
-            $em = $this->getDoctrine()->getManager();
+            
             $em->persist($user);
             $em->flush();
 
