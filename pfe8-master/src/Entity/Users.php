@@ -30,7 +30,7 @@ class Users
     #[ORM\Column(type: 'boolean')]
     private $is_valid =false;
 
-    #[ORM\ManyToMany(targetEntity: Categories::class, mappedBy: 'users')]
+    #[ORM\ManyToMany(targetEntity: Categories::class, inversedBy: 'users')]
     private $categories;
 
     public function __construct()
@@ -116,7 +116,7 @@ class Users
     {
         if (!$this->categories->contains($category)) {
             $this->categories[] = $category;
-            $category->addUser($this);
+            //$category->addUser($this);
         }
 
         return $this;
@@ -124,10 +124,7 @@ class Users
 
     public function removeCategory(Categories $category): self
     {
-        if ($this->categories->removeElement($category)) {
-            $category->removeUser($this);
-        }
-
+        $this->categories->removeElement($category);
         return $this;
     }
 }

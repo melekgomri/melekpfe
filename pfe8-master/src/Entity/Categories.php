@@ -18,7 +18,7 @@ class Categories
     #[ORM\Column(type: 'string', length: 255)]
     private $name;
 
-    #[ORM\ManyToMany(targetEntity: Users::class, inversedBy: 'categories')]
+    #[ORM\ManyToMany(targetEntity: Users::class, mappedBy: 'categories')]
     private $users;
 
     #[ORM\OneToMany(mappedBy: 'categories', targetEntity: Newsletters::class, orphanRemoval: true)]
@@ -59,6 +59,7 @@ class Categories
     {
         if (!$this->users->contains($user)) {
             $this->users[] = $user;
+            $user->addCategory($this);
         }
 
         return $this;
@@ -66,10 +67,13 @@ class Categories
 
     public function removeUser(Users $user): self
     {
-        $this->users->removeElement($user);
+        if($this->users->removeElement($user)){
+            $user->removeCategory($this);
+        }
 
         return $this;
     }
+
 
     /**
      * @return Collection<int, Newsletters>

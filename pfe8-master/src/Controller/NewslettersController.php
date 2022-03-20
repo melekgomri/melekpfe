@@ -2,13 +2,13 @@
 
 namespace App\Controller;
 
-use App\Entity\Newsletters\Newsletters;
+use App\Entity\Newsletters;
 use App\Entity\Users;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Form\NewslettersType;
 use App\Form\NewslettersUsersType;
 use App\Message\SendNewsletterMessage;
-use App\Repository\Newsletters\NewslettersRepository;
+use App\Repository\NewslettersRepository;
 use App\Service\SendNewsletterService;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -64,7 +64,7 @@ class NewslettersController extends AbstractController
     /**
      * @Route("/confirm/{id}/{token}", name="confirm")
      */
-    public function confirm(Users $user, $token): Response
+    public function confirm(Users $user, $token,EntityManagerInterface $em): Response
     {
         if($user->getValidationToken() != $token){
             throw $this->createNotFoundException('Page non trouvée');
@@ -72,7 +72,7 @@ class NewslettersController extends AbstractController
 
         $user->setIsValid(true);
 
-        $em = $this->getDoctrine()->getManager();
+       
         $em->persist($user);
         $em->flush();
 
@@ -84,7 +84,7 @@ class NewslettersController extends AbstractController
     /**
      * @Route("/prepare", name="prepare")
      */
-    public function prepare(Request $request): Response
+    public function prepare(Request $request,EntityManagerInterface $em): Response
     {
         $newsletter = new Newsletters();
         $form = $this->createForm(NewslettersType::class, $newsletter);
@@ -92,7 +92,7 @@ class NewslettersController extends AbstractController
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-            $em = $this->getDoctrine()->getManager();
+            
             $em->persist($newsletter);
             $em->flush();
 
