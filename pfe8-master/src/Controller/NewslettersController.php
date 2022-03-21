@@ -118,21 +118,30 @@ class NewslettersController extends AbstractController
     /**
      * @Route("/send/{id}", name="send")
      */
-    public function send(Newsletters $newsletter, MessageBusInterface $messageBus): Response
+    public function send(Newsletters $newsletter, MailerInterface $mailer,EntityManagerInterface $em): Response
     {
         $users = $newsletter->getCategories()->getUsers();
 
         foreach($users as $user){
             if($user->getIsValid()){
-                $messageBus->dispatch(new SendNewsletterMessage($user->getId(), $newsletter->getId()));
+                
+            $email = (new TemplatedEmail())
+            ->from('newsletter@site.fr')
+            ->to($user->getEmail())
+            ->subject($newsletter->getName())
+            ->htmlTemplate('emails/newsletter.html.twig')
+            ->context(compact('newsletter', 'user'))
+            ;
+
+        $mailer->send($email);
             }
         }
 
         // $newsletter->setIsSent(true);
 
-        // $em = $this->getDoctrine()->getManager();
-        // $em->persist($newsletter);
-        // $em->flush();
+         
+         //$em->persist($newsletter);
+         //$em->flush();
 
         return $this->redirectToRoute('newsletters_list');
     }
