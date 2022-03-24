@@ -149,13 +149,13 @@ class NewslettersController extends AbstractController
     /**
      * @Route("/unsubscribe/{id}/{newsletter}/{token}", name="unsubscribe")
      */
-    public function unsubscribe(Users $user, Newsletters $newsletter, $token): Response
+    public function unsubscribe(Users $user, Newsletters $newsletter, $token,EntityManagerInterface $em): Response
     {
         if($user->getValidationToken() != $token){
             throw $this->createNotFoundException('Page non trouvée');
         }
 
-        $em = $this->getDoctrine()->getManager();
+        
 
         if(count($user->getCategories()) > 1){
             $user->removeCategory($newsletter->getCategories());

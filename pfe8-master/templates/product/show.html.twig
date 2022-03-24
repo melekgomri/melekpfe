@@ -1,5 +1,5 @@
 
-{% block title %} {{product.name}} -west world shirts {% endblock %}
+{% block title %} west world shirts {% endblock %}
 
 {% block content %}
 <div class="row">
@@ -14,7 +14,7 @@
 <p>
 {{product.description}}
 </p>
-<a href="{{path('add_to_cart',{'id':product.id})}}" class="btn btn-primary"> ajouter au panier </a>
+<a href="{path('add_to_cart',{'id':product.id})}}" class="btn btn-primary"> ajouter au panier </a>
 </div>
 </div>
 {% endblock %}
