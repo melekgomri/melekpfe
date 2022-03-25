@@ -71,6 +71,7 @@ class ProductController extends AbstractController
             $em->persist($comment);
             $em->flush();
             $this->addFlash('message', 'Votre commentaire a bien été envoyé');
+            return $this->redirectToRoute('product', ['slug' => $product->getSlug()]);
         }
 
         return $this->render('product/show.html.twig',[
