@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Classe\Mail;
 use App\Form\RegisterType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,7 +18,8 @@ class RegisterController extends AbstractController
     #[Route('/register', name: 'register')]
     public function index(Request $request, EntityManagerInterface $doctrine,UserPasswordHasherInterface $encodeur): Response
     {
-    
+        $mail=new Mail();
+        $mail->send('malekgomri881@hotmail.com','ala mab1','Mon premier email','votre reclation en cours de traitement ');
         $notification=null;
         $user=new User();
         $form = $this->createForm(RegisterType::class, $user);

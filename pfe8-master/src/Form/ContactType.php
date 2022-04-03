@@ -25,8 +25,16 @@ class ContactType extends AbstractType
                 ]
             ])
             ->add('phone')
-            ->add('email')
-            ->add('message')
+            ->add('email',TextType::class,[
+                'attr' =>[
+                    'placeholder'=>'Quel votre email?'
+                ]
+            ])
+            ->add('message',TextType::class,[
+                'attr' =>[
+                    'placeholder'=>'Donner votre message?'
+                ]
+            ])
             ->add('Envouyer',SubmitType::class)
         ;
     }
