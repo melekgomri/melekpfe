@@ -7,7 +7,11 @@ use App\Entity\Product;
 use App\Entity\Contact;
 use App\Entity\Comments;
 use App\Entity\Messages;
+use App\Entity\Calendar;
 use App\Entity\User;
+use App\Entity\Users;
+use App\Entity\Newsletters;
+use App\Entity\Categories;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -58,5 +62,9 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Messages', 'fas fa-tag', Messages::class);
         yield MenuItem::linkToCrud('Comments', 'fas fa-tag', Comments::class);
         yield MenuItem::linkToCrud('Contact', 'fas fa-tag', Contact::class);
+        yield MenuItem::linkToCrud('Calendar', 'fas fa-tag', Calendar::class);
+        yield MenuItem::linkToCrud('Newsletters', 'fas fa-tag', Newsletters::class);
+        yield MenuItem::linkToCrud('Categories', 'fas fa-tag', Categories::class);
+        yield MenuItem::linkToCrud('Usersnesw', 'fas fa-user', Users::class);
     }
 }

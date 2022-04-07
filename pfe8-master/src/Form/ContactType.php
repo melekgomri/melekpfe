@@ -20,11 +20,16 @@ class ContactType extends AbstractType
                 ]
             ])
             ->add('lastname',TextType::class,[
+
                 'attr' =>[
                     'placeholder'=>'Quel votre prenom?'
                 ]
             ])
-            ->add('phone')
+            ->add('phone',TextType::class,[
+                'attr' =>[
+                    'placeholder'=>'Quel votre numero de telephone?'
+                ]
+            ])
             ->add('email',TextType::class,[
                 'attr' =>[
                     'placeholder'=>'Quel votre email?'
@@ -32,7 +37,7 @@ class ContactType extends AbstractType
             ])
             ->add('message',TextType::class,[
                 'attr' =>[
-                    'placeholder'=>'Donner votre message?'
+                    'placeholder'=>'Quel votre message?'
                 ]
             ])
             ->add('Envouyer',SubmitType::class)
