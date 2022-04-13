@@ -40,7 +40,7 @@ class ContactType extends AbstractType
                     'placeholder'=>'Quel votre message?'
                 ]
             ])
-            ->add('Envouyer',SubmitType::class)
+            ->add('Envoyer',SubmitType::class)
         ;
     }
 

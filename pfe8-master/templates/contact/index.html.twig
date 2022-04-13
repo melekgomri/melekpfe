@@ -1,5 +1,40 @@
-{% form_theme form 'bootstrap_5_layout.html.twig' %}
+<html lang="fr">
+<head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@0.5.3/dist/css/axentix.min.css">
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+        <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+        }
+        body{
+            display:flex;
+            height:100vh;
+            padding:10px;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(135deg,#71b7e6,#9b59b6);
+        }
+        .container{
+            max-width:700px;
+            width:100%;
+            background:#fff;
+            padding:25px 30px;
+            border-radius:5px;
+        }
+        
+ </style> 
+    </head>
 {% block body %}
+<div class="container">
+<br><br><br>
 {{form(form)}}
+</div>
 {% endblock %}
+</html>

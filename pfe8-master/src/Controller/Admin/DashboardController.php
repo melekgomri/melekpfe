@@ -62,9 +62,9 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Messages', 'fas fa-tag', Messages::class);
         yield MenuItem::linkToCrud('Comments', 'fas fa-tag', Comments::class);
         yield MenuItem::linkToCrud('Contact', 'fas fa-tag', Contact::class);
-        yield MenuItem::linkToCrud('Calendar', 'fas fa-tag', Calendar::class);
+        yield MenuItem::linkToCrud('Evenements', 'fas fa-tag', Calendar::class);
         yield MenuItem::linkToCrud('Newsletters', 'fas fa-tag', Newsletters::class);
-        yield MenuItem::linkToCrud('Categories', 'fas fa-tag', Categories::class);
+        yield MenuItem::linkToCrud('Categoriesnewslettres', 'fas fa-tag', Categories::class);
         yield MenuItem::linkToCrud('Usersnesw', 'fas fa-user', Users::class);
     }
 }
