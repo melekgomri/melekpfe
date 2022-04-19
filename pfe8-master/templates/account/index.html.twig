@@ -1,6 +1,14 @@
+<html lang="fr">
+<h1>Mon Compte -West world Shirts</h1>
+<head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
 
-
-{% block title %}Mon Compte -West world Shirts{% endblock %}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@0.5.3/dist/css/axentix.min.css">
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+      
+        </head>
 
 {% block content %}
 <h1>Mon compte</h1>

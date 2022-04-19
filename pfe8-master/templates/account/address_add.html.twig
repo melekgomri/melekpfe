@@ -1,7 +1,10 @@
 <html>
 <head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@0.5.3/dist/css/axentix.min.css">
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
 {% block title %} Ajouter Une Address -West world Shirts{% endblock %}
-
+</head>
 {% block content %}
 <h1> Ajouter une Address</h1><br>
 <a href="{{path('account_address')}}">Retour</a>

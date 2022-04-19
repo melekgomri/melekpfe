@@ -10,11 +10,11 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 class ContactController extends AbstractController
-{
+{ 
     #[Route('/contact', name: 'app_contact')]
     public function index(Request $request, EntityManagerInterface $doctrine): Response
     {
-        
+       
         $contact=new Contact();
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);

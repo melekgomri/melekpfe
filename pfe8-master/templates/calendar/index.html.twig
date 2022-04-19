@@ -1,6 +1,12 @@
-{% extends 'base2.html.twig' %}
+<html lang="fr">
+<head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
 
-{% block title %}Calendar index{% endblock %}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@0.5.3/dist/css/axentix.min.css">
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+        </head>
 
 {% block body %}
     <h1>Calendar index</h1>
