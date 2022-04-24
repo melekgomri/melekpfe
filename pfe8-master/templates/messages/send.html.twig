@@ -1,4 +1,13 @@
-{% extends 'base1.html.twig' %}
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@0.5.3/dist/css/axentix.min.css">
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+<style>
+body {
+  background-image: url('assets/img/melek2.jpg') !important; 
+}
+</style>
+</head>
 {% block title %}Messagerie
 {% endblock %}
 
@@ -6,7 +15,7 @@
 	<section class="container">
 		<div class="row">
 			<div class="col">
-				<h1>Envoyer un message</h1>
+				<h3>Envoyer un message</h3>
                 {{ form(form) }}
 				<a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
 					Voir mes dossiers
@@ -16,18 +25,18 @@
 	</section>
 	<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
 		<div class="offcanvas-header">
-			<h2 class="offcanvas-title" id="offcanvasExampleLabel">Mes dossiers</h2>
+			<h2 class="offcanvas-title" id="offcanvasExampleLabel"><h5>Mes dossiers</h5>
 			<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 		</div>
 		<div class="offcanvas-body">
             <div class="list-group">
-                <a href="{{ path("messages") }}" class="list-group-item list-group-item-action">Accueil</a>
+                <a href="{{ path("messages") }}" class="list-group-item list-group-item-action"><h5>Accueil</h5></a>
             </div>
             <div class="list-group">
-                <a href="{{ path("messages") }}" class="list-group-item list-group-item-action">Boîte de réception</a>
+                <a href="{{ path("messages") }}" class="list-group-item list-group-item-action"><h5>Boîte de réception</h5></a>
             </div>
             <div class="list-group">
-                <a href="{{ path("messages") }}" class="list-group-item list-group-item-action">Eléments envoyés</a>
+                <a href="{{ path("messages") }}" class="list-group-item list-group-item-action"><h6>Eléments envoyés</h6></a>
             </div>
 		</div>
 	</div>

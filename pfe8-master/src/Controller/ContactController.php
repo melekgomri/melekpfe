@@ -25,7 +25,7 @@ class ContactController extends AbstractController
             $doctrine->flush();
             $notification="votre probleme va etre bientot resolut ,Mercie ";
             $mail=new Mail();
-        $mail->send('west12@outlook.fr','west world','Mon premier mail','votre probleme est resolue');
+        $mail->send('west12@outlook.fr','west world','votre probleme va etre bientot resolut ,Mercie','votre probleme est resolue');
         }
         return $this->renderForm('contact/index.html.twig', [
             'controller_name' => 'ContactController',

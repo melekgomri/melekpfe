@@ -32,7 +32,7 @@ class MessagesType extends AbstractType
                 "class" => User::class,
                 "choice_label" => "email",
                 "attr" => [
-                    "class" => "form-control"
+                    'placeholder'=>'malekc@hotmial.com'
                 ]
             ])
             ->add('envoyer', SubmitType::class, [

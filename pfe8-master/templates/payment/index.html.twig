@@ -1,17 +1,21 @@
 <head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@0.5.3/dist/css/axentix.min.css">
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
 <style>
 body {
- background-color:#c98b8b;
+  background-image: url('assets/img/melek2.jpg') !important; 
 }
 </style>
 </head>
-{% block title %}Make Payment{% endblock %}
+<br><br>
+{% block title %}<h1 class="fs-1"><div class="p-3 mb-2 bg-gradient-warning text-dark">Make Payment</div></h1>{% endblock %}
 <br><br>
 {% block body %}
 
 
     <form action="/checkout" method="POST">
-        <button type="submit" class="w3-button w3-black">Checkout</button>
+        <button type="submit" class="btn btn-dark">>Checkout</button>
     </form>
 
 <div>

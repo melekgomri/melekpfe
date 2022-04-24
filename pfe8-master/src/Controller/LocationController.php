@@ -12,8 +12,7 @@ class LocationController extends AbstractController
     #[Route('/location', name: 'app_location')]
     public function index(): Response
     {
-        $mail=new Mail();
-        $mail->send('west12@outlook.fr','west world','Mon premier mail','votre probleme est resolue');
+       
         return $this->render('location/index.html.twig');
     }
 }
