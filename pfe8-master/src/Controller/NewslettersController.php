@@ -57,7 +57,7 @@ class NewslettersController extends AbstractController
         }
 
         return $this->render('newsletters/index.html.twig', [
-            'form' => $form->createView(),
+            'form' => $form->createView()
         ]);
     }
 
