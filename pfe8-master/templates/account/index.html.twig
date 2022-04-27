@@ -1,22 +1,27 @@
-<html lang="fr">
-<h1>Mon Compte -West world Shirts</h1>
 <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@0.5.3/dist/css/axentix.min.css">
+<meta charset="utf-8">
+<link rel="stylesheet" href="{{asset('assets/css/style2.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/style1.css')}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@0.5.3/dist/css/axentix.min.css">
         {% block stylesheets %}{% endblock %}
         <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
-      
-        </head>
+<head>
+<style>
+body {
+  background-image: url('assets/img/melek2.jpg') !important; 
+}
+</style>
+</head>
+<h1>Mon Compte -West world Shirts</h1>
 
 {% block content %}
 <h1>Mon compte</h1>
-Bienvenue {{app.user.firstname}}  Dans votre compte . <br><br>
-c'est dans cet espace que vous allez pouvoir gérer toutes vos informations personelles .<br>
+<h5>Bienvenue {{app.user.firstname}}  Dans votre compte .<h5> <br><br>
+<h5>c'est dans cet espace que vous allez pouvoir gérer toutes vos informations personelles .</h5><br>
 <hr>
-<a href="{{path('account_password')}}">-Modifier mon mot de passe</a><br/>
-<a href="{{path('account_address')}}">-Gerer MES ADDRESS</a><br/><br/>
--Mes Commandes
+<a href="{{path('account_password')}}"><h5>-Modifier mon mot de passe</h5></a><br/>
+<a href="{{path('account_address')}}"><h5>-Gerer MES ADDRESS</h5></a><br/><br/>
+<h5>-Mes Commandes</h5>
 </hr>
 {% endblock %}

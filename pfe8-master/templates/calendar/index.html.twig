@@ -1,18 +1,17 @@
+
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="{{asset('assets/css/style2.css')}}">
+ <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+ <link rel="stylesheet" href="{{asset('assets/css/style2.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style1.css')}}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@0.5.3/dist/css/axentix.min.css">
-        {% block stylesheets %}{% endblock %}
-        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
-<head>
-<style>
-body {
-  background-image: url('assets/img/melek2.jpg') !important; 
-}
-</style>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
+
+    <style>
+    body{
+ background-image: url('assets/img/melek2.jpg') !important; 
+ background-color:rgba(8,8,0,0);
+    } 
+    </style>
 
 {% block body %}
     <h1>Calendar index</h1>
@@ -59,6 +58,5 @@ body {
 
     <a href="{{ path('app_calendar_new') }}">Create new</a>
     <br><br><br>
-    <a href="{{ path('main') }}">VOIR VOTRE CALENDRIER</a>
-    
-{% endblock %}
+    <a href="{{ path('main') }}">VOIR VOTRE EVENEMENT</a>
+   {% endblock %} 
