@@ -1,19 +1,17 @@
 <head>
 <meta charset="utf-8">
-<link rel="stylesheet" href="{{asset('assets/css/style2.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/style1.css')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@0.5.3/dist/css/axentix.min.css">
         {% block stylesheets %}{% endblock %}
         <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
 <head>
 <style>
-body {
+body{
   background-image: url('assets/img/melek2.jpg') !important; 
+  opacity:05;
 }
 </style>
 </head>
-
+<div class="main">
 {% block title %}Mes Address -West world Shirts{% endblock %}
 
 {% block content %}
@@ -42,4 +40,5 @@ Vous n'avez pas encore ajouté d'adresse dans votre compte client . Pour en ajou
 </div>
 {% endfor %}
 {% endif %}
+</div>
 {% endblock %}

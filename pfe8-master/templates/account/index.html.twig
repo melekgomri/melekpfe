@@ -8,11 +8,13 @@
         <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
 <head>
 <style>
-body {
+body{
   background-image: url('assets/img/melek2.jpg') !important; 
+  opacity:05;
 }
 </style>
 </head>
+<div class="main">
 <h1>Mon Compte -West world Shirts</h1>
 
 {% block content %}
@@ -24,4 +26,5 @@ body {
 <a href="{{path('account_address')}}"><h5>-Gerer MES ADDRESS</h5></a><br/><br/>
 <h5>-Mes Commandes</h5>
 </hr>
+</div>
 {% endblock %}

@@ -31,9 +31,7 @@ class MessagesType extends AbstractType
             ->add('recipient', EntityType::class, [
                 "class" => User::class,
                 "choice_label" => "email",
-                "attr" => [
-                    'placeholder'=>'malekc@hotmial.com'
-                ]
+                'attr'=>['placeholder'=>'malekc@hotmial.com']
             ])
             ->add('envoyer', SubmitType::class, [
                 "attr" => [
