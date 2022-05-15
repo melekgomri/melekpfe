@@ -42,12 +42,15 @@
                 </li>
             </ul>
             <div class="navbar-item-custom">
+            <button><a href="{{path('admin')}}" class="btn btn-warning">Administrateur</a></button>
+            </div>
+            <div class="navbar-item-custom">
             {% if app.user %}
              <a href="{{path('account')}}">Mon compte <small>({{app.user.firstname}})</small></a>  |<a href="{{path('app_logout')}}">Deconnexion</a>
             {% else %}
                 <a href="{{path('app_login')}}">connexion</a>  |<a href="{{path('register')}}">Inscription</a>
                 {% endif %}
-                <a href="{{path('cart')}}"><img src="{{asset('assets/img/shopping-cart.png')}}"height="20px"></a>
+                <a href="{{path('cart')}}"><img src="{{asset('assets/img/shopping-cart.png')}}"height="30px"></a>
                 </div>
             </form>
         </div>

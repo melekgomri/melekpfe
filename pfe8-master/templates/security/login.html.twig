@@ -1,4 +1,17 @@
-
+<html lang="en">
+<head>
+<meta charset="utf-8">
+    <title>Webpage Design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+   <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+    <style>
+    *{
+ background-image: url('assets/img/melek13.png') !important; 
+ opacity:01;
+    } 
+</style>
+</head>
 
 {% block title %}Se connecter-West worlds shirts{% endblock %}
 
@@ -15,10 +28,10 @@
     {% endif %}
 
     <h1 class="h3 mb-3 font-weight-normal">Mercie de vous Connecter</h1>
-    <label for="inputEmail">votre email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" placeholder="email" required autofocus>
-    <label for="inputPassword">votre mot de passe</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" placeholder="mot de passe" required>
+    <label for="inputEmail"><h1>votre email</h1></label>
+    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" placeholder="email" required autofocus></h1><br><br>
+    <label for="inputPassword"><h1>votre mot de passe</h1></label>
+    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" placeholder="mot de passe" required></h1>
 
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"

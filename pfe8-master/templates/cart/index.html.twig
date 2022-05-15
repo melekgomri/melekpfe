@@ -9,7 +9,7 @@
 <head>
 <style>
 body {
-  background-image: url('assets/img/melek2.jpg') !important;
+  background-image: url('assets/img/melek13.png') !important;
   opacity:01; 
 }
 </style>
@@ -55,6 +55,7 @@ body {
 <div class="text-right">
 <b>Nombre de produit :</b>{{items|length}}</br>
 <b>Total de mon panier :</b> {{((total)/100)|number_format(2,',','.')}}$
+<h1><a href="{{path('products')}}" class="btn btn-success btn-block mt-3">Ajouter un autre Produit</a></h1>
 <h1><a href="{{path('payment')}}" class="btn btn-success btn-block mt-3">Faire Le payment </a></h1>
 </div>
 </div>
